@@ -69,7 +69,8 @@ app.use((req, res, next) => {
     req.path.startsWith("/js/") ||
     req.path.startsWith("/images/") ||
     req.path.endsWith(".mp4") ||
-    
+    req.path.endsWith(".js") ||
+    req.path.endsWith(".css") ||
     req.path.endsWith("index.html")
   ) {
     return next();
@@ -112,6 +113,7 @@ app.get("*", (req, res) => {
 ===================================================== */
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log("🚀 Server running on port " + PORT));
+
 
 
 
