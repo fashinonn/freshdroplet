@@ -59,7 +59,7 @@ app.use((req, res, next) => {
 /* =====================================================
    ACCESS CONTROL
 ===================================================== */
-const ALLOWED_ORIGIN = "https://grooveyoga.shop";
+const ALLOWED_ORIGIN = "https://greencrafter.space";
 
 app.use((req, res, next) => {
 
@@ -69,7 +69,7 @@ app.use((req, res, next) => {
     req.path.startsWith("/js/") ||
     req.path.startsWith("/images/") ||
     req.path.endsWith(".mp4") ||
-    req.path === "/" ||
+    
     req.path.endsWith("index.html")
   ) {
     return next();
@@ -112,6 +112,7 @@ app.get("*", (req, res) => {
 ===================================================== */
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log("🚀 Server running on port " + PORT));
+
 
 
 
